@@ -1,8 +1,8 @@
 <section class="location">
     <div class="container">
-        <div class="row">
+        <div class="row py-5">
             <div class="col-12">
-                <h2>O Evento será realizado no Alvorada Camp</h2>
+                <h2 class="text-center">O Evento será realizado no Alvorada Camp</h2>
             </div>
         </div>
     </div>

@@ -307,6 +307,21 @@ function create_post_type_mestres() {
 }   
 add_action( 'init', 'create_post_type_mestres' );
 
+// Create Taxonomy Days to Events
+function create_days_tax() {
+	register_taxonomy(
+		'days',
+		'events',
+		array(
+			'label' => __( 'Dias' ),
+			'rewrite' => array( 'slug' => 'days' ),
+			'hierarchical' => true,
+		)
+	);
+}
+add_action( 'init', 'create_days_tax' );
+
+
 // Create Post Type Pacotes
 function create_post_type_pacotes() {
     register_post_type( 'pacotes',

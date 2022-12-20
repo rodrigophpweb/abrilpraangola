@@ -1,10 +1,12 @@
 <?php 
     get_header();
     get_template_part('template-parts/home');
+    get_template_part('template-parts/events');
     get_template_part('template-parts/speakers');
     get_template_part('template-parts/packages');
-    get_template_part('template-parts/sponsors');
     get_template_part('template-parts/location');
+    get_template_part('template-parts/ticket');
+    get_template_part('template-parts/sponsors');
     get_template_part('template-parts/contact');
     get_footer();
 ?>
