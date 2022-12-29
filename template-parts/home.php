@@ -1,7 +1,7 @@
 <main style="background-image:url('<?php the_field('image_cover');?>'); height:100vh">
     <div class="container py-5">
-        <div class="row">
-            <div class="col-12 py-5 text-light">
+        <div class="row py-5">
+            <div class="col-12 text-light py-5 my-5 d-flex flex-column align-items-center">
                 <?php
 
                     if ( have_posts() ) :

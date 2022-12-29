@@ -20,36 +20,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('programacao');?>">Programação</a>
-                    </li>
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('programacao');?>">Programação</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('oficineiros');?>">Oficineiros</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('oficineiros');?>">Oficineiros</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('pacotes');?>">Pacotes</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('pacotes');?>">Pacotes</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('inscricao-do-evento');?>">Inscrição</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('localizacao');?>">Localização</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('inscricao-do-evento');?>">Inscrição</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('localizacao');?>">Localização</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-uppercase" href="<?php echo site_url('contato');?>">Contato</a>
-                    </li>
-                    
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                </form>
+                        <li class="nav-item">
+                            <a class="nav-link text-light text-uppercase" href="<?php echo site_url('contato');?>">Contato</a>
+                        </li>
+                        
+                    </ul>
                 </div>
             </div>
         </nav>

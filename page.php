@@ -26,9 +26,19 @@
                     </div>
                 </section>
                 <?php get_template_part('template-parts/speakers');
-            endif;
-        endwhile;
+            endif;?>
+            <section>
+                <div class="container">
+                    <div class="row pt-5">
+                        <div class="col-12">
+                            <?php the_content();?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endwhile;
     endif;?>
     <?php 
         get_template_part('template-parts/location');
+        get_template_part('template-parts/sponsors');
         get_footer();
