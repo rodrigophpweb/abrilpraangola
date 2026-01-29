@@ -1,0 +1,296 @@
+/* ============================================
+   SEÇÃO SOBRE - Section About
+   ============================================ */
+
+.section-about {
+    padding: var(--spacing-section, 80px) 0;
+    background-color: var(--color-bg-light, #F5F5F5);
+    position: relative;
+
+    /* Container */
+    & .container {
+        max-width: var(--container-max-width, 1200px);
+        margin: 0 auto;
+        padding: 0 var(--spacing-container, 20px);
+    }
+
+    /* ============================================
+       HEADER DA SEÇÃO
+       ============================================ */
+
+    &__header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        color: var(--color-text, #333);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    &__description {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: var(--color-text, #333);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    /* ============================================
+       CONTEÚDO - DUAS COLUNAS
+       ============================================ */
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+    }
+
+    /* ============================================
+       COLUNAS
+       ============================================ */
+
+    &__column {
+        background: var(--color-bg-light, #FFFFFF);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            animation: fadeInUp 0.6s ease-out;
+
+            &:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+        }
+    }
+
+    /* Subtítulos das colunas */
+    &__subtitle {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        font-weight: 600;
+        color: var(--color-primary, #FFD700);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--color-primary, #FFD700);
+            border-radius: 2px;
+        }
+    }
+
+    /* ============================================
+       COLUNA 1: LOCALIZAÇÃO
+       ============================================ */
+
+    &__location {
+        border-left: 4px solid var(--color-primary, #FFD700);
+    }
+
+    &__address {
+        font-style: normal;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--color-text, #333);
+        margin: 0;
+
+        & span {
+            display: block;
+        }
+
+        & em {
+            color: rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+    }
+
+    /* Link do mapa */
+    &__map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: var(--color-primary, #FFD700);
+        color: var(--color-text, #333);
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: var(--color-secondary, #228B22);
+            color: var(--color-text-light, #FFF);
+            transform: translateX(5px);
+        }
+
+        & svg {
+            flex-shrink: 0;
+        }
+    }
+
+    /* ============================================
+       COLUNA 2: QUANDO
+       ============================================ */
+
+    &__when {
+        border-left: 4px solid var(--color-secondary, #228B22);
+    }
+
+    &__dates {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        & em {
+            color: rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+    }
+
+    &__date-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+        font-size: 1rem;
+        color: var(--color-text, #333);
+        line-height: 1.6;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        & svg {
+            flex-shrink: 0;
+            color: var(--color-secondary, #228B22);
+            margin-top: 2px;
+        }
+
+        & span {
+            flex: 1;
+        }
+
+        & time {
+            font-weight: 600;
+            color: var(--color-secondary, #228B22);
+        }
+    }
+
+    /* ============================================
+       RESPONSIVIDADE
+       ============================================ */
+
+    @media (max-width: 767px) {
+        padding: 60px 0;
+
+        &__header {
+            margin-bottom: 40px;
+        }
+
+        &__column {
+            padding: 25px;
+        }
+
+        &__subtitle {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 40px 0;
+
+        &__content {
+            gap: 30px;
+        }
+
+        &__column {
+            padding: 20px;
+        }
+
+        &__map-link {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ============================================
+       MODO ESCURO
+       ============================================ */
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-bg-dark, #1a1a1a);
+
+        &__title,
+        &__description,
+        &__address,
+        &__date-item {
+            color: var(--color-text-light, #FFF);
+        }
+
+        &__column {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+
+    /* ============================================
+       IMPRESSÃO
+       ============================================ */
+
+    @media print {
+        padding: 20px 0;
+        background: white;
+
+        &__column {
+            box-shadow: none;
+            border: 1px solid #ddd;
+            break-inside: avoid;
+        }
+
+        &__map-link {
+            display: none;
+        }
+    }
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
