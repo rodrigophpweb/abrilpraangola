@@ -1,0 +1,330 @@
+/**
+ * Section Master Capoeira
+ * Seção que exibe informações sobre o Mestre de Capoeira
+ */
+
+.MasterCapoeira {
+    background-color: var(--section-bg-color, var(--color-bg-light, #F5F5F5));
+    color: var(--section-text-color, var(--color-text, #333333));
+    padding: clamp(3rem, 8vw, 6rem) 0;
+    position: relative;
+    overflow: hidden;
+
+    /* Container */
+    & .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 clamp(1rem, 4vw, 2rem);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+
+        /* Layout Desktop: Figura à esquerda, Artigo à direita */
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1.2fr;
+            gap: clamp(2rem, 4vw, 5rem);
+        }
+
+        @media (min-width: 1024px) {
+            grid-template-columns: 1fr 1.5fr;
+            gap: clamp(3rem, 5vw, 6rem);
+        }
+    }
+
+    /* Figure - Imagem do Mestre */
+    &__figure {
+        margin: 0;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin-inline: auto;
+        
+        /* Ordem Mobile: Figura primeiro */
+        order: 1;
+
+        @media (min-width: 768px) {
+            /* Desktop: Figura à esquerda */
+            order: 1;
+            max-width: none;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.15),
+                0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 4 / 5;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 
+                    0 15px 40px rgba(0, 0, 0, 0.2),
+                    0 5px 10px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        /* Efeito decorativo */
+        &::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--color-primary, #FFD700);
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+
+            @media (min-width: 768px) {
+                top: -20px;
+                left: -20px;
+            }
+        }
+
+        &:hover::before {
+            top: -20px;
+            left: -20px;
+            opacity: 0.5;
+
+            @media (min-width: 768px) {
+                top: -25px;
+                left: -25px;
+            }
+        }
+    }
+
+    /* Article - Conteúdo do Mestre */
+    &__article {
+        /* Ordem Mobile: Artigo segundo (embaixo) */
+        order: 2;
+
+        @media (min-width: 768px) {
+            /* Desktop: Artigo à direita */
+            order: 2;
+        }
+    }
+
+    /* Título */
+    &__title {
+        color: var(--section-title-color, var(--color-text, #1a1a1a));
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 clamp(1rem, 3vw, 1.5rem);
+        position: relative;
+        padding-bottom: 1rem;
+
+        /* Linha decorativa sob o título */
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: clamp(60px, 15vw, 80px);
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                var(--color-primary, #FFD700) 0%,
+                var(--color-secondary, #228B22) 100%
+            );
+            border-radius: 2px;
+        }
+
+        /* Efeito de destaque no texto */
+        & strong,
+        & b {
+            color: var(--color-primary, #FFD700);
+            font-weight: inherit;
+        }
+    }
+
+    /* Conteúdo / Texto */
+    &__content {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        line-height: 1.7;
+        color: var(--section-text-color, var(--color-text, #333333));
+        margin: 0;
+
+        & p {
+            margin: 0 0 1.25rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Estilo para parágrafos com destaque */
+        & strong,
+        & b {
+            font-weight: 600;
+            color: var(--color-secondary, #228B22);
+        }
+
+        /* Estilo para links */
+        & a {
+            color: var(--color-link, #0066CC);
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: var(--color-link-hover, #004499);
+                text-decoration-color: currentColor;
+            }
+
+            &:visited {
+                color: var(--color-link-visited, #551A8B);
+            }
+        }
+
+        /* Estilo para listas */
+        & ul,
+        & ol {
+            margin: 1.25rem 0;
+            padding-left: 1.5rem;
+
+            & li {
+                margin-bottom: 0.5rem;
+                padding-left: 0.5rem;
+
+                &::marker {
+                    color: var(--color-primary, #FFD700);
+                }
+            }
+        }
+
+        /* Estilo para citações */
+        & blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--color-primary, #FFD700);
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 0 4px 4px 0;
+            font-style: italic;
+
+            & p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    /* Responsividade para dispositivos muito pequenos */
+    @media (max-width: 374px) {
+        padding: 2.5rem 0;
+
+        & .container {
+            gap: 1.5rem;
+        }
+
+        &__figure {
+            &::before {
+                top: -10px;
+                left: -10px;
+            }
+
+            &:hover::before {
+                top: -15px;
+                left: -15px;
+            }
+        }
+    }
+
+    /* Responsividade para tablets */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        &__figure {
+            & img {
+                aspect-ratio: 3 / 4;
+            }
+        }
+    }
+
+    /* Modo escuro (opcional) */
+    @media (prefers-color-scheme: dark) {
+        &__content {
+            & blockquote {
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        &__figure {
+            & img {
+                box-shadow: 
+                    0 10px 30px rgba(0, 0, 0, 0.3),
+                    0 4px 8px rgba(0, 0, 0, 0.2);
+
+                &:hover {
+                    box-shadow: 
+                        0 15px 40px rgba(0, 0, 0, 0.4),
+                        0 5px 10px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+
+    /* Animações de entrada (opcional - requer JavaScript) */
+    &[data-animated="true"] {
+        & .MasterCapoeira__figure,
+        & .MasterCapoeira__article {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        & .MasterCapoeira__figure {
+            animation-delay: 0.1s;
+        }
+
+        & .MasterCapoeira__article {
+            animation-delay: 0.3s;
+        }
+    }
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Impressão */
+@media print {
+    .MasterCapoeira {
+        padding: 1rem 0;
+        page-break-inside: avoid;
+
+        & .container {
+            display: block;
+        }
+
+        &__figure {
+            max-width: 300px;
+            float: left;
+            margin-right: 1.5rem;
+            margin-bottom: 1rem;
+
+            &::before {
+                display: none;
+            }
+
+            & img {
+                box-shadow: none;
+            }
+        }
+
+        &__title {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
