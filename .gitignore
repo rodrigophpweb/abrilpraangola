@@ -1,0 +1,253 @@
+# WordPress Theme - .gitignore
+# Criado em: 29/01/2026
+
+# ====================
+# WordPress Core Files
+# ====================
+# Não versionar arquivos do WordPress core se estiver no diretório do tema
+/wp-admin/
+/wp-includes/
+/wp-content/plugins/
+/wp-content/themes/*/
+!/wp-content/themes/wp-capoeira/
+
+# ====================
+# Configurações WordPress
+# ====================
+wp-config.php
+wp-config-local.php
+.htaccess
+
+# ====================
+# Uploads e Mídia
+# ====================
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+
+# ====================
+# Banco de Dados
+# ====================
+*.sql
+*.sql.gz
+*.sql.zip
+local-database.sql
+database-backup/
+
+# ====================
+# Sistema Operacional
+# ====================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ====================
+# IDEs e Editores
+# ====================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PhpStorm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+.phpstorm.meta.php
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+.sublime-gulp.cache
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+
+# ====================
+# Node.js / NPM / Yarn
+# ====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnp.*
+.yarn/
+package-lock.json
+yarn.lock
+
+# ====================
+# Composer (PHP)
+# ====================
+vendor/
+composer.lock
+composer.phar
+
+# ====================
+# Build e Compilação
+# ====================
+dist/
+build/
+*.min.css
+*.min.js
+*.map
+.cache/
+.parcel-cache/
+
+# ====================
+# Sass / SCSS
+# ====================
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# ====================
+# Logs e Debug
+# ====================
+*.log
+error_log
+debug.log
+wp-content/debug.log
+logs/
+*.bak
+*.swp
+*.swo
+*~
+
+# ====================
+# Temporários e Cache
+# ====================
+tmp/
+temp/
+*.tmp
+.cache
+.temp/
+wp-content/cache/
+wp-content/w3tc-config/
+
+# ====================
+# Ambientes Locais
+# ====================
+# Local by Flywheel
+local-site.json
+.vagrant/
+Vagrantfile.local
+
+# MAMP / XAMPP
+phpmyadmin/
+mysql/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# ====================
+# Variáveis de Ambiente
+# ====================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.backup
+
+# ====================
+# Ferramentas de Deploy
+# ====================
+.git-ftp.log
+.ftpconfig
+.sftp-config.json
+deploy.php
+
+# ====================
+# Backups
+# ====================
+*.backup
+backup/
+backups/
+*.zip
+*.tar.gz
+*.rar
+wp-content/ai1wm-backups/
+
+# ====================
+# Testes
+# ====================
+phpunit.xml
+.phpunit.result.cache
+tests/_output/*
+tests/_support/_generated
+coverage/
+
+# ====================
+# Segurança
+# ====================
+# Nunca versionar chaves e certificados
+*.pem
+*.key
+*.crt
+*.p12
+id_rsa
+id_rsa.pub
+.ssh/
+
+# ====================
+# Theme Específico
+# ====================
+# Descomentar se necessário
+# /assets/images/originals/
+# /assets/fonts/backup/
+
+# ====================
+# WordPress Plugins Comuns (Cache)
+# ====================
+wp-content/w3tc-config/
+wp-content/wp-rocket-config/
+wp-content/cache/
+wp-content/et-cache/
+wp-content/autoptimize/
+
+# ====================
+# Arquivos Pessoais
+# ====================
+TODO.md
+NOTES.md
+TASKS.md
+.personal/
