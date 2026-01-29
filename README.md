@@ -181,11 +181,11 @@ Este projeto é de código aberto e está disponível sob a licença MIT.
 
 ## 👨‍💻 Autor
 
-**Rodrigo Silva**
+**Rodrigo Vieira Eufrasio da Silva**
 - GitHub: [@rodrigophpweb](https://github.com/rodrigophpweb)
+- Website: [Programador Web](https://programadorweb.com.br)
 
 ## 📞 Suporte
-
 Para suporte, entre em contato através das issues do GitHub.
 
 ---
